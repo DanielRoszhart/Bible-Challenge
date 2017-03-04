@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4472C4"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:text="You answered 0 of 10"
+        android:textSize="26dp"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtViewGoAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:textSize="26dp"
+        android:textColor="#FFFFFF"
+        android:text="Try Again?" />
+
+    <Button
+        android:id="@+id/btnGo"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="GO"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/txtViewGoAgain"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

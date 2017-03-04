@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4472C4"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtViewQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show the Question"
+        android:gravity="center"
+        android:textSize="26dp"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/txtViewTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="124dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:text="Timer"
+        android:layout_below="@+id/txtViewQuestion"
+        android:layout_alignLeft="@+id/txtViewAnswer"
+        android:layout_alignStart="@+id/txtViewAnswer" />
+
+    <TextView
+        android:id="@+id/txtViewAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:textColor="#FFFFFF"
+        android:textSize="26dp"
+        android:text="Answer typed here"
+        android:layout_below="@+id/txtViewTimer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="74dp"
+        android:layout_marginEnd="74dp" />
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtViewAnswer"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtViewAnswer"
+        android:layout_marginBottom="42dp"
+        android:layout_width="90dp"
+        android:text="Skip" />
+</RelativeLayout>

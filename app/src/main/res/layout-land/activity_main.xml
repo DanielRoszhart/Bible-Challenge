@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4472C4"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtViewIntro"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:fontFamily="Arial"
+        android:gravity="center"
+        android:lines="20"
+        android:text="Bible Challenge
+
+How well do you know the Bible?"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_marginTop="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    Bi<Button
+        android:id="@+id/btnIntroNext"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+    android:text="Next"
+        android:textSize="26sp"
+    android:layout_marginTop="42dp"
+    android:layout_below="@+id/txtViewIntro"
+    android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>
