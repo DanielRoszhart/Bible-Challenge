@@ -9,50 +9,49 @@
         android:id="@+id/txtViewQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show the Question"
-        android:gravity="center"
-        android:textSize="26dp"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/txtViewQuestion"
+        android:textColor="#FFFFFF"
+        android:textSize="26dp" />
 
     <TextView
         android:id="@+id/txtViewTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="124dp"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:text="Timer"
-        android:layout_below="@+id/txtViewQuestion"
         android:layout_alignLeft="@+id/txtViewAnswer"
-        android:layout_alignStart="@+id/txtViewAnswer" />
+        android:layout_alignStart="@+id/txtViewAnswer"
+        android:layout_below="@+id/txtViewQuestion"
+        android:layout_marginLeft="60sp"
+        android:layout_marginStart="60sp"
+        android:layout_marginTop="124sp"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/txtViewAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:textColor="#FFFFFF"
-        android:textSize="26dp"
-        android:text="Answer typed here"
-        android:layout_below="@+id/txtViewTimer"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="74dp"
-        android:layout_marginEnd="74dp" />
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtViewTimer"
+        android:layout_marginEnd="74sp"
+        android:layout_marginRight="74sp"
+        android:layout_marginTop="132sp"
+        android:text="@string/txtViewAnswer"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp" />
 
     <Button
         android:id="@+id/btnSkip"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/txtViewAnswer"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/txtViewAnswer"
         android:layout_marginBottom="42dp"
-        android:layout_width="90dp"
-        android:text="Skip" />
+        android:text="@string/btnSkip" />
 </RelativeLayout>

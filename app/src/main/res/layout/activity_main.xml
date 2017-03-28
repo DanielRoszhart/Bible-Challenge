@@ -10,33 +10,26 @@
         android:id="@+id/txtViewIntro"
         android:layout_width="353dp"
         android:layout_height="350dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:fontFamily="Arial"
         android:gravity="center"
         android:lines="20"
-        android:text="Bible Challenge
-
-
-
-
-
-
-        How well do you know the Bible?"
+        android:text="@string/txtViewIntro"
         android:textColor="#FFFFFF"
         android:textSize="26sp" />
 
-    Bi<Button
+    <Button
         android:id="@+id/btnIntroNext"
         android:layout_width="100dp"
         android:layout_height="50dp"
-    android:text="Next"
-        android:textSize="26sp"
-    android:layout_below="@+id/txtViewIntro"
-    android:layout_alignRight="@+id/txtViewIntro"
-    android:layout_alignEnd="@+id/txtViewIntro"
-    android:layout_marginRight="37dp"
-    android:layout_marginEnd="37dp"
-    android:layout_marginTop="81dp" />
+        android:layout_alignEnd="@+id/txtViewIntro"
+        android:layout_alignRight="@+id/txtViewIntro"
+        android:layout_below="@+id/txtViewIntro"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="81dp"
+        android:text="@string/btnIntroNext"
+        android:textSize="26sp" />
 
 
 

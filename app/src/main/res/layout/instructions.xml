@@ -11,17 +11,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="25sp"
+        android:gravity="center"
+        android:text="@string/txtViewGameInstructions"
         android:textColor="#FFFFFF"
-        android:text="Answer as many questions as possible within 60 seconds.
-
-
-Skip a question if stuck.
-
-
-Tap start when ready."
-        android:textSize="22dp"
-        android:gravity="center"/>
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/btnStart"
@@ -29,6 +23,6 @@ Tap start when ready."
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="122dp"
-        android:text="Start" />
+        android:layout_marginBottom="122sp"
+        android:text="@string/btnStart" />
 </RelativeLayout>

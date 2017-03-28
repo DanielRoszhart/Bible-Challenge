@@ -8,13 +8,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".CategoryActivity"
+            android:label="@string/app_name">
+            </activity>
+        <activity
+            android:name=".InstructionsActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/app_name">
         </activity>
     </application>
 
