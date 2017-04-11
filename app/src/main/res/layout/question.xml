@@ -31,27 +31,61 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/txtViewAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtViewTimer"
-        android:layout_marginEnd="74sp"
-        android:layout_marginRight="74sp"
-        android:layout_marginTop="132sp"
-        android:text="@string/txtViewAnswer"
-        android:textColor="#FFFFFF"
-        android:textSize="26sp" />
-
     <Button
         android:id="@+id/btnSkip"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtViewAnswer"
+        android:layout_marginBottom="22dp"
+        android:text="@string/btnSkip"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/txtViewAnswer"
-        android:layout_marginBottom="42dp"
-        android:text="@string/btnSkip" />
+        android:layout_alignLeft="@+id/btnOptionD"
+        android:layout_alignStart="@+id/btnOptionD" />
+
+    <Button
+        android:id="@+id/btnOptionA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtViewTimer"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:onClick="onClickQuestion"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btnOptionB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnOptionA"
+        android:layout_alignBottom="@+id/btnOptionA"
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp"
+        android:layout_toEndOf="@+id/btnOptionA"
+        android:layout_toRightOf="@+id/btnOptionA"
+        android:onClick="onClickQuestion"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btnOptionC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnOptionA"
+        android:layout_alignStart="@+id/btnOptionA"
+        android:layout_below="@+id/btnOptionA"
+        android:layout_marginTop="51dp"
+        android:onClick="onClickQuestion"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btnOptionD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnOptionB"
+        android:layout_alignStart="@+id/btnOptionB"
+        android:layout_alignTop="@+id/btnOptionC"
+        android:onClick="onClickQuestion"
+        android:text="Button" />
 </RelativeLayout>

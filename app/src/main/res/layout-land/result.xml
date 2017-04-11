@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37sp"
-        android:text="@string/txtViewResult"
+        android:text=""
         android:textColor="#FFFFFF"
         android:textSize="26sp" />
 

@@ -4,17 +4,16 @@
     <string name="txtViewIntro">Bible Challenge -
         How well do you know the Bible?</string>
     <string name="txtViewInstructions">Tap the button to generate a category</string>
-    <string name="txtViewCategories">Categories: People, Place, Thing, Church History</string>
+    <string name="txtViewCategories">Categories: Who, What, When, Where, Why</string>
     <string name="btnPush">Tap</string>
     <string name="txtViewCategory_Result">Category Result</string>
     <string name="btnCategoryNext">Next</string>
     <string name="txtViewGameInstructions">Answer as many questions as possible within 60 seconds.
         Skip a question if stuck. Tap start when ready."</string>
     <string name="btnStart">Start</string>
-    <string name="txtViewQuestion">Show the Question</string>
-    <string name="txtViewAnswer">Answer typed here</string>
+    <string name="txtViewQuestion"></string>
+    <string name="txtViewAnswer"></string>
     <string name="btnSkip">Skip</string>
-    <string name="txtViewResult">You answered 0 of 10</string>
     <string name="txtViewGoAgain">Try Again?</string>
     <string name="btnGo">GO</string>
 
