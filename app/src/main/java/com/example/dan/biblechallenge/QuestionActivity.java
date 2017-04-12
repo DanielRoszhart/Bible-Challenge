@@ -1,44 +1,31 @@
 package com.example.dan.biblechallenge;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.List;
 
-import static android.R.attr.onClick;
-import static com.example.dan.biblechallenge.R.id.btnOptionA;
-import static com.example.dan.biblechallenge.R.id.btnOptionB;
-import static com.example.dan.biblechallenge.R.id.btnOptionC;
-import static com.example.dan.biblechallenge.R.id.btnSkip;
+
 
 
 public class QuestionActivity extends AppCompatActivity {
     List<QuestionsTable> whoQuesList;
-    protected MySqlDataSource mDatasource;
-    List<QuestionsTable> whatQuesList;
     int score = 0;
     int qid = 0;
-    QuestionsTable currentWhatQ;
     QuestionsTable currentWhoQ;
     Button btnA, btnB, btnC, btnD;
     Button butSkip;
     TextView txtQuestion;
-    MySQLiteHelper db = new MySQLiteHelper(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
         butSkip = (Button) findViewById(R.id.btnSkip);
-
-        mDatasource = new MySqlDataSource(QuestionActivity.this);
-        mDatasource.open();
-
+        MySQLiteHelper db = new MySQLiteHelper(this);
         whoQuesList = db.getAllWhos();
         currentWhoQ = whoQuesList.get(qid);
         txtQuestion = (TextView)findViewById(R.id.txtViewQuestion);
@@ -46,10 +33,7 @@ public class QuestionActivity extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.btnOptionB);
         btnC = (Button) findViewById(R.id.btnOptionC);
         btnD = (Button) findViewById(R.id.btnOptionD);
-
-
-
-
+        setQuestionView();
     }
     public void onClickQuestion(View v) {
 
@@ -130,17 +114,6 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
 
-@Override
-protected void onResume() {
-    super.onResume();
-    mDatasource.open();
-}
-
-@Override
-protected void onPause(){
-    super.onPause();
-    mDatasource.close();
-}
 
     public void setQuestionView() {
         txtQuestion.setText(currentWhoQ.getQuestion());
@@ -151,13 +124,6 @@ protected void onPause(){
         qid++;
     }
 
-    public void setWhatQuestionView() {
-        txtQuestion.setText(currentWhatQ.getQuestion());
-        btnA.setText(currentWhatQ.getMultipleChoiceA());
-        btnB.setText(currentWhatQ.getMultipleChoiceB());
-        btnC.setText(currentWhatQ.getMultipleChoiceC());
-        btnD.setText(currentWhatQ.getMultipleChoiceD());
-        qid++;
-    }
+
 }
 
