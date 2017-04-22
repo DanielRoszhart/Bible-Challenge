@@ -25,8 +25,28 @@ public class InstructionsActivity extends AppCompatActivity {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent intent = new Intent(context, QuestionActivity.class);
-                startActivity(intent);
+                Bundle b = getIntent().getExtras();
+                String value = b.getString("category");
+                if (value.equals("When")) {
+                    Intent myIntent = new Intent(context, WhenQuestionActivity.class);
+                    startActivity(myIntent);
+                }
+                if (value.equals("Where")) {
+                    Intent myIntent = new Intent(context, WhereQuestionActivity.class);
+                    startActivity(myIntent);
+                }
+                if (value.equals("Who")) {
+                    Intent myIntent = new Intent(context, WhoQuestionActivity.class);
+                    startActivity(myIntent);
+                }
+                if (value.equals("What")) {
+                    Intent myIntent = new Intent(context, WhatQuestionActivity.class);
+                    startActivity(myIntent);
+                }
+                if (value.equals("Why")) {
+                    Intent myIntent = new Intent(context, WhyQuestionActivity.class);
+                    startActivity(myIntent);
+                }
             }
         });
 

@@ -20,20 +20,26 @@
         </activity>
         <activity
             android:name=".CategoryActivity"
-            android:label="@string/app_name">
-            </activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".InstructionsActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name" />
         <activity
-            android:name=".QuestionActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:name=".WhyQuestionActivity"
+            android:label="@string/app_name" />
         <activity
             android:name=".ResultActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name" />
+        <activity android:name=".WhenQuestionActivity" />
+        <activity
+            android:name=".WhereQuestionActivity"
+            android:label="@string/title_activity_where_question" />
+        <activity
+            android:name=".WhoQuestionActivity"
+            android:label="@string/title_activity_who_question" />
+        <activity
+            android:name=".WhatQuestionActivity"
+            android:label="@string/title_activity_what_question"></activity>
     </application>
 
 </manifest>

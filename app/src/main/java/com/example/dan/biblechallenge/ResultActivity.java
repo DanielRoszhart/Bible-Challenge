@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -15,6 +16,10 @@ Button button;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        TextView t=(TextView)findViewById(R.id.txtViewResult);
+        Bundle b = getIntent().getExtras();
+        int score= b.getInt("score");
+        t.setText("You answered: " + Integer.toString(score) + " out of 10! ");
         addListenerOnButton();
     }
 

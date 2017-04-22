@@ -33,22 +33,10 @@
         android:id="@+id/txtViewAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSkip"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="51sp"
         android:text="@string/txtViewAnswer"
         android:textColor="#FFFFFF"
         android:textSize="26sp" />
 
-    <Button
-        android:id="@+id/btnSkip"
-        android:layout_width="90sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="23sp"
-        android:layout_marginEnd="77sp"
-        android:layout_marginRight="77sp"
-        android:text="@string/btnSkip" />
 </RelativeLayout>

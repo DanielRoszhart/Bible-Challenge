@@ -17,5 +17,8 @@
     <string name="txtViewResult">You answered 0 of 10</string>
     <string name="txtViewGoAgain">Try Again?</string>
     <string name="btnGo">GO</string>
+    <string name="title_activity_where_question">WhereQuestionActivity</string>
+    <string name="title_activity_who_question">WhoQuestionActivity</string>
+    <string name="title_activity_what_question">WhatQuestionActivity</string>
 
 </resources>
