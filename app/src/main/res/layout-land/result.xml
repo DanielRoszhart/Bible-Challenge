@@ -20,20 +20,20 @@
         android:id="@+id/txtViewGoAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170sp"
+        android:layout_marginBottom="19dp"
         android:text="@string/txtViewGoAgain"
         android:textColor="#FFFFFF"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:layout_above="@+id/btnGo"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/btnGo"
         android:layout_width="90sp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtViewGoAgain"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54sp"
         android:text="@string/btnGo"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp" />
 </RelativeLayout>

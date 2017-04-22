@@ -9,30 +9,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.List;
-public class WhyQuestionActivity extends AppCompatActivity implements View.OnClickListener{
+public class WhenQuestionActivity extends AppCompatActivity implements View.OnClickListener{
     private int score = 0;
-    private Button button;
     private int qid = 0;
     private Button btnA, btnB, btnC, btnD;
     private TextView txtQuestion;
-    private List<QuestionsTable> whyQuesList;
-    private QuestionsTable currentWhyQ;
+    private List<QuestionsTable> whenQuesList;
+    private QuestionsTable currentWhenQ;
     private CountDownTimer countDownTimer;
-    private TextView textV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
         MySQLiteHelper db = new MySQLiteHelper(this);
-        whyQuesList = db.getAllWhys();
-        currentWhyQ = whyQuesList.get(qid);
+        whenQuesList = db.getAllWhens();
+        currentWhenQ = whenQuesList.get(qid);
         txtQuestion = (TextView) findViewById(R.id.txtViewQuestion);
         final TextView myTimer = (TextView) findViewById(R.id.txtViewTimer);
         btnA = (Button) findViewById(R.id.btnOptionA);
         btnB = (Button) findViewById(R.id.btnOptionB);
         btnC = (Button) findViewById(R.id.btnOptionC);
         btnD = (Button) findViewById(R.id.btnOptionD);
-        setWhyQuestionView();
+        setWhenQuestionView();
         countDownTimer = new CountDownTimer(60000, 1000) {
             public void onTick(long millisUntilFinished) {
                 myTimer.setText(millisUntilFinished / 1000 + " seconds remaining");
@@ -40,7 +38,7 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
             public void onFinish()
             {
                 myTimer.setText("Done!");
-                Intent intent = new Intent(WhyQuestionActivity.this, ResultActivity.class);
+                Intent intent = new Intent(WhenQuestionActivity.this, ResultActivity.class);
                 Bundle b = new Bundle();
                 b.putInt("score", score); //Your score
                 intent.putExtras(b); //Put your score to your next Intent
@@ -52,30 +50,30 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
         if (v.getId() == R.id.btnOptionA || v.getId() == R.id.btnOptionB
                 || v.getId()==R.id.btnOptionC || v.getId() == R.id.btnOptionD) {
 
-                if (currentWhyQ.getAnswer().equals(((TextView) v).getText())) {
-                    score++;
-                } else {
-                    Log.e("Yolo", "Right Answer " + currentWhyQ.getAnswer());
-                }
-                if (qid < 10) {
-                    currentWhyQ = whyQuesList.get(qid);
-                    setWhyQuestionView();
-                } else {
-                    countDownTimer.cancel();
-                    Intent intent = new Intent(WhyQuestionActivity.this, ResultActivity.class);
-                    Bundle b = new Bundle();
-                    b.putInt("score", score); //Your score
-                    intent.putExtras(b); //Put your score to your next Intent
-                    startActivity(intent);
-                }
+            if (currentWhenQ.getAnswer().equals(((TextView) v).getText())) {
+                score++;
+            } else {
+                Log.e("Yolo", "Right Answer " + currentWhenQ.getAnswer());
+            }
+            if (qid < 10) {
+                currentWhenQ = whenQuesList.get(qid);
+                setWhenQuestionView();
+            } else {
+                countDownTimer.cancel();
+                Intent intent = new Intent(WhenQuestionActivity.this, ResultActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("score", score); //Your score
+                intent.putExtras(b); //Put your score to your next Intent
+                startActivity(intent);
+            }
         }
     }
-    public void setWhyQuestionView() {
-        txtQuestion.setText(currentWhyQ.getQuestion());
-        btnA.setText(currentWhyQ.getMultipleChoiceA());
-        btnB.setText(currentWhyQ.getMultipleChoiceB());
-        btnC.setText(currentWhyQ.getMultipleChoiceC());
-        btnD.setText(currentWhyQ.getMultipleChoiceD());
+    public void setWhenQuestionView() {
+        txtQuestion.setText(currentWhenQ.getQuestion());
+        btnA.setText(currentWhenQ.getMultipleChoiceA());
+        btnB.setText(currentWhenQ.getMultipleChoiceB());
+        btnC.setText(currentWhenQ.getMultipleChoiceC());
+        btnD.setText(currentWhenQ.getMultipleChoiceD());
         qid++;
     }
 }

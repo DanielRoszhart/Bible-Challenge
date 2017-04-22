@@ -9,34 +9,61 @@
         android:id="@+id/txtViewQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
 
-        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/txtViewQuestion"
         android:textColor="#FFFFFF"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/txtViewTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtViewQuestion"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="59sp"
+        android:layout_marginTop="24dp"
         android:textColor="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/txtViewAnswer"
+        android:textSize="20sp"
+        android:layout_below="@+id/txtViewQuestion"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/btnOptionA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="51sp"
-        android:text="@string/txtViewAnswer"
-        android:textColor="#FFFFFF"
-        android:textSize="26sp" />
+        android:onClick="onClick"
+        android:text="Button"
+        android:layout_above="@+id/btnOptionB"
+        android:layout_alignLeft="@+id/btnOptionB"
+        android:layout_alignStart="@+id/btnOptionB" />
+
+    <Button
+        android:id="@+id/btnOptionB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Button"
+        android:layout_above="@+id/btnOptionC"
+        android:layout_alignLeft="@+id/btnOptionC"
+        android:layout_alignStart="@+id/btnOptionC" />
+
+    <Button
+        android:id="@+id/btnOptionC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Button"
+        android:layout_above="@+id/btnOptionD"
+        android:layout_alignLeft="@+id/btnOptionD"
+        android:layout_alignStart="@+id/btnOptionD" />
+
+    <Button
+        android:id="@+id/btnOptionD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
