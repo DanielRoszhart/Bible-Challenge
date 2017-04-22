@@ -10,15 +10,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.util.List;
 public class WhyQuestionActivity extends AppCompatActivity implements View.OnClickListener{
-    private int score = 0;
-    private Button button;
-    private int qid = 0;
-    private Button btnA, btnB, btnC, btnD;
-    private TextView txtQuestion;
-    private List<QuestionsTable> whyQuesList;
-    private QuestionsTable currentWhyQ;
-    private CountDownTimer countDownTimer;
-    private TextView textV;
+    int score = 0;
+    Button button;
+    int qid = 0;
+    Button btnA, btnB, btnC, btnD;
+    TextView txtQuestion;
+    List<QuestionsTable> whyQuesList;
+    QuestionsTable currentWhyQ;
+    CountDownTimer countDownTimer;
+    TextView textV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +33,13 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
         btnC = (Button) findViewById(R.id.btnOptionC);
         btnD = (Button) findViewById(R.id.btnOptionD);
         setWhyQuestionView();
+
         countDownTimer = new CountDownTimer(60000, 1000) {
+
             public void onTick(long millisUntilFinished) {
                 myTimer.setText(millisUntilFinished / 1000 + " seconds remaining");
             }
+
             public void onFinish()
             {
                 myTimer.setText("Done!");
@@ -47,7 +50,9 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
                 startActivity(intent);
             }
         }.start();
+
     }
+
     public void onClick(View v) {
         if (v.getId() == R.id.btnOptionA || v.getId() == R.id.btnOptionB
                 || v.getId()==R.id.btnOptionC || v.getId() == R.id.btnOptionD) {
@@ -68,6 +73,7 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
                     intent.putExtras(b); //Put your score to your next Intent
                     startActivity(intent);
                 }
+
         }
     }
     public void setWhyQuestionView() {
@@ -78,4 +84,6 @@ public class WhyQuestionActivity extends AppCompatActivity implements View.OnCli
         btnD.setText(currentWhyQ.getMultipleChoiceD());
         qid++;
     }
+
+
 }
