@@ -9,8 +9,6 @@ public class QuestionsTable {
     private String multipleChoiceC;
     private String multipleChoiceD;
     private String answer;
-
-
     //constructors
     public QuestionsTable () {
         id=0;
@@ -20,8 +18,6 @@ public class QuestionsTable {
         multipleChoiceD="";
         answer="";
     }
-
-
     public QuestionsTable( String question, String multipleChoiceA, String multipleChoiceB,
                            String multipleChoiceC, String multipleChoiceD, String answer) {
 
@@ -33,59 +29,54 @@ public class QuestionsTable {
         this.answer=answer;
     }
     //Setters
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
-
-    public void setQuestion(String question) {
+    public void setQuestion(String question)
+    {
         this.question = question;
     }
-
-    public void setMultipleChoiceA(String multipleChoiceA) {
+    public void setMultipleChoiceA(String multipleChoiceA)
+    {
         this.multipleChoiceA = multipleChoiceA;
     }
-
-    public void setMultipleChoiceB(String multipleChoiceB) {
+    public void setMultipleChoiceB(String multipleChoiceB)
+    {
         this.multipleChoiceB = multipleChoiceB;
     }
-
-    public void setMultipleChoiceC(String multipleChoiceC) {
+    public void setMultipleChoiceC(String multipleChoiceC)
+    {
         this.multipleChoiceC = multipleChoiceC;
     }
-
-    public void setMultipleChoiceD(String multipleChoiceD) {
+    public void setMultipleChoiceD(String multipleChoiceD)
+    {
         this.multipleChoiceD = multipleChoiceD;
     }
-
-    public void setAnswer(String answer) {
+    public void setAnswer(String answer)
+    {
         this.answer = answer;
     }
-
     //Getters
-    public long getId() {
+    public long getId()
+    {
         return this.id;
     }
-
     public String getQuestion() {
         return this.question;
     }
-
     public String getMultipleChoiceA() {
         return this.multipleChoiceA;
     }
-
     public String getMultipleChoiceB() {
         return this.multipleChoiceB;
     }
-
     public String getMultipleChoiceC() {
         return this.multipleChoiceC;
     }
-
     public String getMultipleChoiceD() {
         return this.multipleChoiceD;
     }
-
     public String getAnswer() {
         return this.answer;
     }

@@ -21,6 +21,7 @@ public class WhenQuestionActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
+        //access database and get all when questions
         MySQLiteHelper db = new MySQLiteHelper(this);
         whenQuesList = db.getAllWhens();
         currentWhenQ = whenQuesList.get(qid);
@@ -46,10 +47,11 @@ public class WhenQuestionActivity extends AppCompatActivity implements View.OnCl
             }
         }.start();
     }
+    //Run through the questions and display the question in a textview and possible answers
+    //on the buttons
     public void onClick(View v) {
         if (v.getId() == R.id.btnOptionA || v.getId() == R.id.btnOptionB
                 || v.getId()==R.id.btnOptionC || v.getId() == R.id.btnOptionD) {
-
             if (currentWhenQ.getAnswer().equals(((TextView) v).getText())) {
                 score++;
             } else {
@@ -68,6 +70,7 @@ public class WhenQuestionActivity extends AppCompatActivity implements View.OnCl
             }
         }
     }
+    //Method to set the textview and buttons with the why question and possible answers
     public void setWhenQuestionView() {
         txtQuestion.setText(currentWhenQ.getQuestion());
         btnA.setText(currentWhenQ.getMultipleChoiceA());

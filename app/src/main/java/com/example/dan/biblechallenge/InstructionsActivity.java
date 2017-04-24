@@ -9,35 +9,31 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 
 public class InstructionsActivity extends AppCompatActivity {
-    Button button;
-String myvalue;
-    Intent myIntent;
+    private Button button;
+    private String myvalue;
+    private Intent myIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instructions);
         Bundle b = getIntent().getExtras();
-         myvalue= b.getString("category");
+        myvalue= b.getString("category");
         addListenerOnButton();
     }
-
+    //Whatever category is chosen compare with the if statement and go to that class.
     public void addListenerOnButton() {
         final Context context = this;
         button = (Button) findViewById(R.id.btnStart);
-
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
                 if (myvalue.equals("When")) {
-                     myIntent = new Intent(context, WhenQuestionActivity.class);
+                    myIntent = new Intent(context, WhenQuestionActivity.class);
                     startActivity(myIntent);
-
                 }
                 if (myvalue.equals("Where")) {
-                   myIntent = new Intent(context, WhereQuestionActivity.class);
+                    myIntent = new Intent(context, WhereQuestionActivity.class);
                     startActivity(myIntent);
-
                 }
                 if (myvalue.equals("Who")) {
                     myIntent = new Intent(context, WhoQuestionActivity.class);
@@ -46,15 +42,12 @@ String myvalue;
                 if (myvalue.equals("What")) {
                     myIntent = new Intent(context, WhatQuestionActivity.class);
                     startActivity(myIntent);
-
                 }
                 if (myvalue.equals("Why")) {
-                     myIntent = new Intent(context, WhyQuestionActivity.class);
+                    myIntent = new Intent(context, WhyQuestionActivity.class);
                     startActivity(myIntent);
-
                 }
             }
         });
-
     }
 }

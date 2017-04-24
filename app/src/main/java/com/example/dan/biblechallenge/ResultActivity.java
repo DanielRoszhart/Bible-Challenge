@@ -8,11 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-
-
 public class ResultActivity extends AppCompatActivity {
-Button button;
+    private Button button;
     @Override
+    //Grab the score from the last layout and display in a textview
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
@@ -22,11 +21,10 @@ Button button;
         t.setText("You answered: " + Integer.toString(score) + " out of 10! ");
         addListenerOnButton();
     }
-
+    //Go to category activity if the user taps the button
     public void addListenerOnButton () {
         final Context context = this;
         button = (Button) findViewById(R.id.btnGo);
-
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -34,6 +32,5 @@ Button button;
                 startActivity(intent);
             }
         });
-
     }
 }

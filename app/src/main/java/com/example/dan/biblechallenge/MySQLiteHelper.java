@@ -1,6 +1,5 @@
 package com.example.dan.biblechallenge;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,13 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MySQLiteHelper extends SQLiteOpenHelper {
     //Database Name
     private static final String DATABASE_NAME = "QuizQuestions.db";
     //Database Version
     private static final int DATABASE_VERSION = 4;
-
     //Table Names
     private static final String TABLE_WHAT = "what";
     private static final String TABLE_WHO = "who";
@@ -25,46 +22,44 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     // Common Column
     private static final String Key_ID="myid";
     //Who Question Tables
-
     private static final String Key_WHO_QUESTION="who_question";
     private static final String Key_WHO_MULTIPLE_CHOICEA="who_multiple_choiceA";
     private static final String Key_WHO_MULTIPLE_CHOICEB="who_multiple_choiceB";
     private static final String Key_WHO_MULTIPLE_CHOICEC="who_multiple_choiceC";
     private static final String Key_WHO_MULTIPLE_CHOICED="who_multiple_choiceD";
     private static final String Key_WHO_ANSWER="who_answer";
-
-    //What Question Table
+    //When Question Table
     private static final String Key_WHEN_QUESTION="when_question";
     private static final String Key_WHEN_MULTIPLE_CHOICEA="when_multiple_choiceA";
     private static final String Key_WHEN_MULTIPLE_CHOICEB="when_multiple_choiceB";
     private static final String Key_WHEN_MULTIPLE_CHOICEC="when_multiple_choiceC";
     private static final String Key_WHEN_MULTIPLE_CHOICED="when_multiple_choiceD";
     private static final String Key_WHEN_ANSWER="when_answer";
-
+    //Why Question Table
     private static final String Key_WHY_QUESTION="why_question";
     private static final String Key_WHY_MULTIPLE_CHOICEA="why_multiple_choiceA";
     private static final String Key_WHY_MULTIPLE_CHOICEB="why_multiple_choiceB";
     private static final String Key_WHY_MULTIPLE_CHOICEC="why_multiple_choiceC";
     private static final String Key_WHY_MULTIPLE_CHOICED="why_multiple_choiceD";
     private static final String Key_WHY_ANSWER="why_answer";
-
+    //Where Question Table
     private static final String Key_WHERE_QUESTION="where_question";
     private static final String Key_WHERE_MULTIPLE_CHOICEA="where_multiple_choiceA";
     private static final String Key_WHERE_MULTIPLE_CHOICEB="where_multiple_choiceB";
     private static final String Key_WHERE_MULTIPLE_CHOICEC="where_multiple_choiceC";
     private static final String Key_WHERE_MULTIPLE_CHOICED="where_multiple_choiceD";
     private static final String Key_WHERE_ANSWER="where_answer";
-
-
+    //Why Question Table
     private static final String Key_WHAT_QUESTION="what_question";
     private static final String Key_WHAT_MULTIPLE_CHOICEA="what_multiple_choiceA";
     private static final String Key_WHAT_MULTIPLE_CHOICEB="what_multiple_choiceB";
     private static final String Key_WHAT_MULTIPLE_CHOICEC="what_multiple_choiceC";
     private static final String Key_WHAT_MULTIPLE_CHOICED="what_multiple_choiceD";
     private static final String Key_WHAT_ANSWER="what_answer";
-
+    //Declaration of database variable
     private SQLiteDatabase database;
-
+    //Create the tables
+    //Who Table
     private static final String CREATE_TABLEWHO = "CREATE TABLE " + TABLE_WHO  + " ("
             + Key_ID + " INTEGER PRIMARY KEY, "
             + Key_WHO_QUESTION+ " TEXT, "
@@ -73,7 +68,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + Key_WHO_MULTIPLE_CHOICEC + " TEXT, "
             + Key_WHO_MULTIPLE_CHOICED + " TEXT, "
             + Key_WHO_ANSWER +" TEXT)";
-
+    //What Table
     private static final String CREATE_TABLEWHAT = "CREATE TABLE " + TABLE_WHAT  + " ("
             + Key_ID + " INTEGER PRIMARY KEY, "
             + Key_WHAT_QUESTION + " TEXT, "
@@ -82,7 +77,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + Key_WHAT_MULTIPLE_CHOICEC + " TEXT, "
             + Key_WHAT_MULTIPLE_CHOICED + " TEXT, "
             + Key_WHAT_ANSWER + " TEXT" + ")";
-
+    //Why Table
     private static final String CREATE_TABLEWHY = "CREATE TABLE " + TABLE_WHY + " ("
             + Key_ID + " INTEGER PRIMARY KEY, "
             + Key_WHY_QUESTION+ " TEXT, "
@@ -91,6 +86,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + Key_WHY_MULTIPLE_CHOICEC + " TEXT, "
             + Key_WHY_MULTIPLE_CHOICED + " TEXT, "
             + Key_WHY_ANSWER + " TEXT)";
+    //Where Table
     private static final String CREATE_TABLE_WHERE = "CREATE TABLE " + TABLE_WHERE  + " ("
             + Key_ID + " INTEGER PRIMARY KEY, "
             + Key_WHERE_QUESTION+ " TEXT, "
@@ -99,6 +95,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + Key_WHERE_MULTIPLE_CHOICEC + " TEXT, "
             + Key_WHERE_MULTIPLE_CHOICED + " TEXT, "
             + Key_WHERE_ANSWER+" TEXT)";
+    //When Table
     private static final String CREATE_TABLE_WHEN = "CREATE TABLE " + TABLE_WHEN  + "("
             + Key_ID + " INTEGER PRIMARY KEY, "
             + Key_WHEN_QUESTION+ " TEXT, "
@@ -108,12 +105,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + Key_WHEN_MULTIPLE_CHOICED + " TEXT, "
             + Key_WHEN_ANSWER+" TEXT)";
 
-    //Create Who Table
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
     }
     @Override
+    //SQL commands to create the tables
     public void onCreate(SQLiteDatabase db) {
         database = db;
 
@@ -122,11 +119,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLEWHY);
         db.execSQL(CREATE_TABLE_WHERE);
         db.execSQL(CREATE_TABLE_WHEN);
-
-
         addWhoQuestions();
     }
-    //Who Questions
+    //Add Who Questions
     public void addWhoQuestions() {
         QuestionsTable q1 = new QuestionsTable("Who was David's daughter?", "Tamar", "Macah", "Bathsheba",
                 "Abigail", "Tamar");
@@ -162,10 +157,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         QuestionsTable q10 = new QuestionsTable("Who did Solomon petition for supplies and workers for the temple?", "King of Tyre", "King of Syria", "King of Hittites", "King of Judah" , "King of Tyre");
         this.createWhoItem(q10);
 
-
         addWhatQuestions();
     }
-
+    //Add What Questions
     public void addWhatQuestions() {
         QuestionsTable q1 = new  QuestionsTable("What prompted King Asa to remove the idols from the lands of Judah and Benjamin?", "Prophetic Word from Azariah", "Vision of God", "Burning bush",
                 "Famine in the land", "Prophetic Word from Azariah");
@@ -201,8 +195,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         QuestionsTable q10 = new  QuestionsTable("What did Nehemiah request of King Artaxerxes?", "Marry his daughter", "To be sent to Jerusalem to rebuild the wall", "Live in the palace", "If he could have a different job" , "To be sent to Jerusalem to rebuild the wall");
         this.createWhatItem(q10);
         addWhyQuestions();
-
     }
+    //Add Why Questions
     public void addWhyQuestions() {
         QuestionsTable q1 = new  QuestionsTable("Why were Shadrach, Meshach & Abednego put into the fiery furnace?", "They would not eat their food",
                 "They refused to worship the image", "They could not interpret the king’s dream", "They were Jews", "They refused to worship the image");
@@ -246,7 +240,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         addWhereQuestions();
     }
-
+    //Add Where Questions
     public void addWhereQuestions() {
         QuestionsTable q1 = new  QuestionsTable("Elijah ran from Jezebel to what mountain?", "Mt. Horeb", "Mt. Hermon", "Mt. Moriah",
                 "Mt. Sinai", "Mt. Horeb");
@@ -283,7 +277,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.createWhereItem(q10);
         addWhenQuestions();
     }
-
+    //Add When Questions
     public void addWhenQuestions() {
         QuestionsTable q1 = new  QuestionsTable("When were the Ten Commandments given to Moses?", "When the Israelites entered the Promised Land", "Immediately after they left Egypt", "Wandering around in the wilderness",
                 "When they were at Mt. Sinai", "When they were at Mt. Sinai");
@@ -320,6 +314,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         this.createWhenItem(q10);
     }
     @Override
+    //Update tables when database version is updated
     public void onUpgrade(SQLiteDatabase db, int OldVersion, int NewVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WHAT);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WHO);
@@ -328,10 +323,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_WHEN);
         onCreate(db);
     }
-
+    //Method to create Who items
     public void createWhoItem(QuestionsTable Whoquests) {
-        //SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(Key_WHO_QUESTION,  Whoquests.getQuestion());
         values.put(Key_WHO_MULTIPLE_CHOICEA,  Whoquests.getMultipleChoiceA());
@@ -339,14 +332,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(Key_WHO_MULTIPLE_CHOICEC,  Whoquests.getMultipleChoiceC());
         values.put(Key_WHO_MULTIPLE_CHOICED,  Whoquests.getMultipleChoiceD());
         values.put(Key_WHO_ANSWER,  Whoquests.getAnswer());
-
         database.insert(TABLE_WHO, null, values);
-
     }
-
+    //Method to create What items
     public void  createWhatItem(QuestionsTable Whatquests) {
-        // SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(Key_WHAT_QUESTION, Whatquests.getQuestion());
         values.put(Key_WHAT_MULTIPLE_CHOICEA, Whatquests.getMultipleChoiceA());
@@ -354,13 +343,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(Key_WHAT_MULTIPLE_CHOICEC, Whatquests.getMultipleChoiceC());
         values.put(Key_WHAT_MULTIPLE_CHOICED, Whatquests.getMultipleChoiceD());
         values.put(Key_WHAT_ANSWER, Whatquests.getAnswer());
-
         database.insert(TABLE_WHAT, null, values);
     }
-
+    //Method to create When items
     public void  createWhenItem(QuestionsTable Whenquests) {
-        //SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(Key_WHEN_QUESTION, Whenquests.getQuestion());
         values.put(Key_WHEN_MULTIPLE_CHOICEA, Whenquests.getMultipleChoiceA());
@@ -368,13 +354,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(Key_WHEN_MULTIPLE_CHOICEC, Whenquests.getMultipleChoiceC());
         values.put(Key_WHEN_MULTIPLE_CHOICED, Whenquests.getMultipleChoiceD());
         values.put(Key_WHEN_ANSWER, Whenquests.getAnswer());
-
         database.insert(TABLE_WHEN, null, values);
     }
-
+    //Method to create Where items
     public void  createWhereItem(QuestionsTable Wherequests) {
-        //SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(Key_WHERE_QUESTION, Wherequests.getQuestion());
         values.put(Key_WHERE_MULTIPLE_CHOICEA, Wherequests.getMultipleChoiceA());
@@ -382,13 +365,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(Key_WHERE_MULTIPLE_CHOICEC, Wherequests.getMultipleChoiceC());
         values.put(Key_WHERE_MULTIPLE_CHOICED, Wherequests.getMultipleChoiceD());
         values.put(Key_WHERE_ANSWER, Wherequests.getAnswer());
-
         database.insert(TABLE_WHERE, null, values);
     }
-
+    //Method to create Why items
     public void  createWhyItem(QuestionsTable Whyquests) {
-        //SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(Key_WHY_QUESTION, Whyquests.getQuestion());
         values.put(Key_WHY_MULTIPLE_CHOICEA, Whyquests.getMultipleChoiceA());
@@ -396,7 +376,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         values.put(Key_WHY_MULTIPLE_CHOICEC, Whyquests.getMultipleChoiceC());
         values.put(Key_WHY_MULTIPLE_CHOICED, Whyquests.getMultipleChoiceD());
         values.put(Key_WHY_ANSWER, Whyquests.getAnswer());
-
         database.insert(TABLE_WHY, null, values);
     }
 
@@ -406,7 +385,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         String selectQuery = "Select * From " + TABLE_WHO;
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-
         if (cursor.moveToFirst()){
             do{
                 QuestionsTable question = new QuestionsTable();
@@ -428,7 +406,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         String selectQuery = "Select * From " + TABLE_WHAT;
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-
         if (cursor.moveToFirst()){
             do{
                 QuestionsTable question = new QuestionsTable();
@@ -444,14 +421,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return whatQuesList;
     }
-
     //Fetching all Whens from the table
     public List<QuestionsTable> getAllWhens() {
         List<QuestionsTable> whenQuesList = new ArrayList<>();
         String selectQuery = "Select * From " + TABLE_WHEN;
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-
         if (cursor.moveToFirst()){
             do{
                 QuestionsTable question = new QuestionsTable();
@@ -468,14 +443,12 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         }
         return whenQuesList;
     }
-
     //Fetching all Wheres from the table
     public List<QuestionsTable> getAllWheres() {
         List<QuestionsTable> whereQuesList = new ArrayList<>();
         String selectQuery = "Select * From " + TABLE_WHERE;
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-
         if (cursor.moveToFirst()){
             do{
                 QuestionsTable question = new QuestionsTable();
@@ -488,19 +461,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 question.setAnswer(cursor.getString(6));
                 whereQuesList.add(question);
             }   while (cursor.moveToNext());
-
         }
         return whereQuesList;
     }
-
-
     //Fetching all Whys from the table
     public List<QuestionsTable> getAllWhys() {
         List<QuestionsTable> whyQuesList = new ArrayList<>();
         String selectQuery = "Select * From " + TABLE_WHY;
         database = this.getReadableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
-
         if (cursor.moveToFirst()){
             do{
                 QuestionsTable question = new QuestionsTable();
@@ -513,7 +482,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 question.setAnswer(cursor.getString(6));
                 whyQuesList.add(question);
             }   while (cursor.moveToNext());
-
         }
         return whyQuesList;
     }

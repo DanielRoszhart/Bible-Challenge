@@ -21,6 +21,7 @@ public class WhoQuestionActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question);
+        //access database and get all who questions
         MySQLiteHelper db = new MySQLiteHelper(this);
         whoQuesList = db.getAllWhos();
         currentWhoQ = whoQuesList.get(qid);
@@ -46,6 +47,8 @@ public class WhoQuestionActivity extends AppCompatActivity implements View.OnCli
             }
         }.start();
     }
+    //Run through the questions and display the question in a textview and possible answers
+    //on the buttons
     public void onClick(View v) {
         if (v.getId() == R.id.btnOptionA || v.getId() == R.id.btnOptionB
                 || v.getId()==R.id.btnOptionC || v.getId() == R.id.btnOptionD) {
@@ -67,6 +70,7 @@ public class WhoQuestionActivity extends AppCompatActivity implements View.OnCli
             }
         }
     }
+    //Method to set the textview and buttons with the why question and possible answers
     public void setQuestionView() {
         txtQuestion.setText(currentWhoQ.getQuestion());
         btnA.setText(currentWhoQ.getMultipleChoiceA());
